@@ -1,0 +1,1 @@
+# Lamak Quest
