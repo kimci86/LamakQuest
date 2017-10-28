@@ -1,4 +1,5 @@
 #include "entity/Star.hpp"
+#include "cmath"
 
 Star::Star(sf::Time t)
  : m_time(t)
