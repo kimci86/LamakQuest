@@ -9,6 +9,12 @@ Lost::Lost(Stack& stack, const Assets& assets, const State& pausedState)
     }})
 {}
 
+void Lost::keyPressed(sf::Keyboard::Key key)
+{
+    if(key == sf::Keyboard::Space)
+        pop(2); // restart;
+}
+
 void Lost::buttonClicked(int button)
 {
     switch(button)
