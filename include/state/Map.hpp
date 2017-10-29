@@ -22,7 +22,7 @@ class Map : public State
         int m_page = 0;
         int m_nbLevels = 20;
         float m_sizeButton;
-        RoundButton m_button;
+        std::vector<RoundButton> m_buttons;
         LevelCover m_stars;
         sf::Sprite m_path;
         std::vector<World> m_worlds;
