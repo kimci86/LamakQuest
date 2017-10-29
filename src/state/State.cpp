@@ -20,49 +20,6 @@ void State::mouseDragged(const sf::Vector2f& position)
 void State::mouseReleased(const sf::Vector2f& position)
 {}
 
-void State::restart()
-{}
-
-bool State::isPaused() const
-{
-    return levelState == LevelStates::PAUSE;
-}
-
-void State::pause()
-{
-    levelState = LevelStates::PAUSE;
-}
-
-void State::resume()
-{
-    levelState = LevelStates::RUN;
-}
-
-bool State::isLost() const
-{
-    return levelState == LevelStates::LOST;
-}
-
-void State::lose()
-{
-    levelState = LevelStates::LOST;
-}
-
-bool State::isWon() const
-{
-    return levelState == LevelStates::WON;
-}
-
-void State::win()
-{
-    levelState = LevelStates::WON;
-}
-
-bool State::isNotRunning() const
-{
-    return levelState != LevelStates::RUN;
-}
-
 bool State::hasTransition() const
 {
     return bool(m_transition);

@@ -23,22 +23,6 @@ class State
         virtual void mouseDragged(const sf::Vector2f& position);
         virtual void mouseReleased(const sf::Vector2f& position);
 
-        virtual void restart();
-
-        virtual void nextLevel();
-
-        bool isPaused() const;
-        virtual void pause();
-        virtual void resume();
-
-        bool isLost() const;
-        void lose();
-
-        bool isWon() const;
-        void win();
-
-        bool isNotRunning() const;
-
         bool hasTransition() const;
         void doTransition(Stack& stack);
 
@@ -59,7 +43,6 @@ class State
 
         Stack& m_stack;
         std::unique_ptr<Transition> m_transition;
-        LevelStates levelState = LevelStates::RUN;
 };
 
 #endif
