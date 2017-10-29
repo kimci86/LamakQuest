@@ -1,6 +1,6 @@
 #include "state/Level.hpp"
 #include "entity/Overlay.hpp"
-#include "state/LevelChoice.hpp"
+#include "state/Pause.hpp"
 
 Level::Level(Stack& stack, const Assets& assets, const World& world)
  : State(stack, assets), m_launched(false), m_world(world)
@@ -21,12 +21,12 @@ void Level::keyPressed(sf::Keyboard::Key key)
     if(key == sf::Keyboard::Space)
         pop(); // restart
     else if(key == sf::Keyboard::Escape)
-        ; // TODO : push(Pause)
+        push(std::unique_ptr<State>(new Pause(getStack(), m_assets, *this)));
 }
 
 void Level::lostFocus()
 {
-    // TODO : push(Pause);
+    push(std::unique_ptr<State>(new Pause(getStack(), m_assets, *this)));
 }
 
 void Level::update(sf::Time deltaTime)
