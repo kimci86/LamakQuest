@@ -1,7 +1,7 @@
 #ifndef MAP_HPP
 #define MAP_HPP
 
-#include "gui/Button.hpp"
+#include "gui/RoundButton.hpp"
 #include "state/State.hpp"
 #include "World.hpp"
 
@@ -21,7 +21,7 @@ class Map : public State
         int m_page = 0;
         int m_nbLevels = 20;
         float m_sizeButton;
-        Button m_button;
+        RoundButton m_button;
         std::vector<World> m_worlds;
         int m_id;
 };
