@@ -19,6 +19,7 @@ class Ball : public Circle
 
         const sf::Vector2f& getVelocity() const;
         void setVelocity(const sf::Vector2f& offset);
+        void applyFriction(float friction);
 
     private:
         sf::Vector2f m_velocity;

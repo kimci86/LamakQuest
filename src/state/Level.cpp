@@ -124,7 +124,8 @@ void Level::restart()
 void Level::update(sf::Time deltaTime)
 {
     m_levelCover.update(deltaTime);
-    if(isNotRunning()){
+    if(isNotRunning())
+    {
         m_overlay.update(deltaTime);
     }
     else
@@ -145,10 +146,13 @@ void Level::update(sf::Time deltaTime)
             lose();
         else
         {
-            bool contains = true;
-            for(Ball& b : m_world.balls)
-                contains = contains && m_world.hole.contains(b);
-            if(contains)
+            // bool contains = true;
+            // for(Ball& b : m_world.balls)
+            //     contains = contains && m_world.hole.contains(b);
+            if(m_world.hole.contains(m_world.balls[0]))
+                m_world.balls[0].applyFriction(0.95f);
+
+            if(m_world.hole.isWon(m_world.balls[0]))
                 win();
         }
     }
