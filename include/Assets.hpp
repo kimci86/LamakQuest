@@ -16,7 +16,7 @@ class Assets
         };
 
         sf::Font font;
-        sf::Texture vortex;
+        sf::Texture vortex, path;
         sf::SoundBuffer hit, launch, win, lose, tada;
 };
 
