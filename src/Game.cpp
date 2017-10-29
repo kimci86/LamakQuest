@@ -1,7 +1,7 @@
 #include "Game.hpp"
 #include "state/Transition.hpp"
 #include "state/Level.hpp"
-#include "state/LevelChoice.hpp"
+#include "state/Map.hpp"
 
 Game::Game()
  : m_window(sf::VideoMode(1024, 768), "Lamak Quest")
@@ -11,7 +11,7 @@ Game::Game()
 
 bool Game::run()
 {
-    m_stack.push(std::unique_ptr<State>(new LevelChoice(m_stack, m_assets)));
+    m_stack.push(std::unique_ptr<State>(new Map(m_stack, m_assets)));
     sf::Clock clock;
     while(!m_stack.empty())
         if(handleEvents() && update(clock.restart()))
