@@ -61,19 +61,11 @@ bool Game::handleEvents()
                 break;
 
             case sf::Event::KeyPressed:
-                if(event.key.code == sf::Keyboard::Space)
-                    getState().restart();
-                else if(event.key.code == sf::Keyboard::Escape)
-                {
-                    if(getState().isPaused())
-                        getState().resume();
-                    else
-                        getState().pause();
-                }
+                getState().keyPressed(event.key.code);
                 break;
 
             case sf::Event::LostFocus:
-                getState().pause();
+                getState().lostFocus();
                 break;
 
             default:
@@ -82,7 +74,7 @@ bool Game::handleEvents()
 
         if(getState().hasTransition())
         {
-            getState().doTransition(m_stack);
+            getState().doTransition();
             sameState = false;
         }
     }
@@ -100,7 +92,7 @@ bool Game::update(sf::Time deltaTime)
     getState().update(deltaTime);
     if(getState().hasTransition())
     {
-        getState().doTransition(m_stack);
+        getState().doTransition();
         return false;
     }
     else

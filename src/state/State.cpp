@@ -31,6 +31,12 @@ void State::mouseDragged(const sf::Vector2f& position)
 void State::mouseReleased(const sf::Vector2f& position)
 {}
 
+void State::keyPressed(sf::Keyboard::Key key)
+{}
+
+void State::lostFocus()
+{}
+
 State::Stack& State::getStack()
 {
     return m_stack;

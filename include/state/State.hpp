@@ -24,6 +24,8 @@ class State
         virtual void mousePressed(const sf::Vector2f& position);
         virtual void mouseDragged(const sf::Vector2f& position);
         virtual void mouseReleased(const sf::Vector2f& position);
+        virtual void keyPressed(sf::Keyboard::Key key);
+        virtual void lostFocus();
 
         virtual void update(sf::Time deltaTime) = 0;
 
