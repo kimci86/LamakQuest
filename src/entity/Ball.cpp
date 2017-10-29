@@ -100,3 +100,8 @@ void Ball::setVelocity(const sf::Vector2f& velocity)
 {
     m_velocity = velocity;
 }
+
+void Ball::applyFriction(float friction)
+{
+    m_velocity = m_velocity * friction;
+}

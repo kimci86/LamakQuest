@@ -18,6 +18,7 @@ class Circle : public Entity
 
     private:
         sf::CircleShape m_shape;
+        float m_winnerRadius;
 };
 
 #endif

@@ -44,15 +44,17 @@ void Level::update(sf::Time deltaTime)
     }
 
     collisions();
+    if(m_world.hole.contains(m_world.balls[0]))
+        m_world.balls[0].applyFriction(0.95f);
 
     if(checkLost())
         ; // TODO: push(End)
     else
     {
-        bool contains = true;
+        bool won = true;
         for(Ball& b : m_world.balls)
-            contains = contains && m_world.hole.contains(b);
-        if(contains)
+            won = won && m_world.hole.isWon(b);
+        if(won)
             ; // TODO: push(End)
     }
 }
