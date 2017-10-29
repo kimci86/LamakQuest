@@ -22,7 +22,7 @@ class World
 
         std::string title;
         Hole hole;
-        std::vector<Ball> balls;
+        Ball ball;
         std::vector<Wall> walls;
         std::vector<Magnet> magnets;
 };
