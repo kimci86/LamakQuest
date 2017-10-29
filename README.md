@@ -1,1 +1,3 @@
 # Lamak Quest
+
+License: MIT
