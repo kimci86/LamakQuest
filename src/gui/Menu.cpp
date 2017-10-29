@@ -3,11 +3,14 @@
 Menu::Menu(sf::Vector2f size, const sf::String& text, const sf::Font& font, std::vector<Button> buttons)
 : m_size(size), m_buttons(buttons)
 {
+	setPosition(sf::Vector2f(size.x, (768-size.y)/2.f));
+
 	m_title.setString(text);
 	m_title.setFont(font);
 	m_title.setCharacterSize(40);
 
 	float heightButton = m_buttons[0].getRectangle().getGlobalBounds().height;
+	float widthButton = m_buttons[0].getRectangle().getGlobalBounds().width;
 
 	float maxWidthButtons=0.f;
 	for(const Button& b : m_buttons){
@@ -17,7 +20,7 @@ Menu::Menu(sf::Vector2f size, const sf::String& text, const sf::Font& font, std:
 	float ecartHeight = (size.y-m_buttons.size()*heightButton)/m_buttons.size();
 	float ecartWidth = (size.x - maxWidthButtons)/2;
 
-	m_title.setPosition(sf::Vector2f(ecartWidth,0.5*ecartHeight));
+	m_title.setPosition(sf::Vector2f(ecartWidth + widthButton/2.f - m_title.getGlobalBounds().width/2.f,0.f));
 	for(int i = 0; i < m_buttons.size(); i++)
 	{
 		m_buttons[i].setPosition(sf::Vector2f(ecartWidth,(i+1.5)*ecartHeight+i*heightButton));
