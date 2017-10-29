@@ -16,7 +16,7 @@ class Assets
         };
 
         sf::Font font;
-        
+        sf::Texture vortex;
 };
 
 #endif

@@ -4,7 +4,7 @@
 LevelChoice::LevelChoice(Stack& stack, const Assets& assets)
  : State(stack, assets), m_sizeButton(200.f),
    m_button(Button(sf::Vector2f(200.f,200.f),L"", assets.font)),
-   m_worlds({{"levels/1.txt"}}),m_id(1)
+   m_worlds({{"levels/1.txt", assets}}),m_id(1)
 {
 }
 

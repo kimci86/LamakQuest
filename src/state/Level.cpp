@@ -35,6 +35,7 @@ void Level::update(sf::Time deltaTime)
     m_levelCover.update(deltaTime);
 
     m_world.ball.update(deltaTime);
+    m_world.hole.update(deltaTime);
 
     for(Magnet& m : m_world.magnets)
     {
@@ -59,7 +60,7 @@ void Level::draw(sf::RenderTarget& target) const
         target.draw(w);
     for(const Magnet& m : m_world.magnets)
         target.draw(m);
-    //target.draw(m_hole);
+    target.draw(m_world.hole);
     target.draw(m_world.ball);
 }
 
