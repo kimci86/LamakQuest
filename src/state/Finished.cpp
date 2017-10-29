@@ -2,11 +2,15 @@
 #include <cmath>
 
 Finished::Finished(Stack& stack, const Assets& assets)
- : State(stack, assets), m_text("Well done!", assets.font, 50.f), m_button(300.f, "Back to map", assets.font)
+ : State(stack, assets),
+   m_text("Well done!", assets.font, 50.f),
+   m_button(300.f, "Back to map", assets.font),
+   m_sound(assets.tada)
 {
     m_button.setPosition({362, 384});
     m_text.setOrigin(sf::Vector2f(m_text.getLocalBounds().width, m_text.getCharacterSize()) / 2.f);
     m_text.setPosition({512, 200});
+    m_sound.play();
 }
 
 void Finished::mouseMoved(const sf::Vector2f& position)

@@ -25,6 +25,7 @@ class Level : public State
         bool m_launched;
         World m_world;
         LevelCover m_levelCover;
+        sf::Sound m_launch, m_hit;
 };
 
 #endif

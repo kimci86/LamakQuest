@@ -11,6 +11,9 @@ class Lost : public LevelMenu
         virtual void keyPressed(sf::Keyboard::Key key);
 
         virtual void buttonClicked(int button);
+
+    private:
+        sf::Sound m_sound;
 };
 
 #endif

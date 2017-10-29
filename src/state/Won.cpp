@@ -7,8 +7,11 @@ Won::Won(Stack& stack, const Assets& assets, const State& pausedState)
         Button(300.f,L"Restart", assets.font),
         Button(300.f,L"Next level", assets.font),
         Button(300.f,L"Map", assets.font)
-    }})
-{}
+    }}),
+   m_sound(assets.win)
+{
+    m_sound.play();
+}
 
 void Won::buttonClicked(int button)
 {
