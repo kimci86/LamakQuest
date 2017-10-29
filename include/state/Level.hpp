@@ -6,7 +6,6 @@
 #include "entity/Overlay.hpp"
 #include "gui/Button.hpp"
 #include "gui/Menu.hpp"
-#include "state/LevelStates.hpp"
 #include "entity/LevelCover.hpp"
 
 class Level : public State

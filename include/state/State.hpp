@@ -6,7 +6,6 @@
 #include <SFML/Graphics.hpp>
 
 #include "Assets.hpp"
-#include "state/LevelStates.hpp"
 
 class Transition;
 
@@ -18,13 +17,13 @@ class State
         State(Stack& stack, const Assets& assets);
         virtual ~State();
 
+        bool hasTransition() const;
+        void doTransition();
+
         virtual void mouseMoved(const sf::Vector2f& position);
         virtual void mousePressed(const sf::Vector2f& position);
         virtual void mouseDragged(const sf::Vector2f& position);
         virtual void mouseReleased(const sf::Vector2f& position);
-
-        bool hasTransition() const;
-        void doTransition(Stack& stack);
 
         virtual void update(sf::Time deltaTime) = 0;
 
@@ -32,9 +31,8 @@ class State
 
     protected:
         Stack& getStack();
-        void pop();
+        void pop(int depth = 1);
         void push(std::unique_ptr<State> state);
-        void change(std::unique_ptr<State> state);
 
         const Assets& m_assets;
 

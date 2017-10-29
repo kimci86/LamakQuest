@@ -3,13 +3,13 @@
 Transition::~Transition()
 {}
 
-Pop::pop(int depth)
+Pop::Pop(int depth)
  : m_depth(depth)
 {}
 
 void Pop::apply(State::Stack& stack)
 {
-    if(int i = ; i < m_depth; i++)
+    for(int i = 0; i < m_depth; i++)
         stack.pop();
 }
 
