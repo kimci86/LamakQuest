@@ -1,14 +1,14 @@
-#ifndef LEVELCHOICE_HPP
-#define LEVELCHOICE_HPP
+#ifndef MAP_HPP
+#define MAP_HPP
 
 #include "gui/Button.hpp"
 #include "state/State.hpp"
 #include "World.hpp"
 
-class LevelChoice : public State
+class Map : public State
 {
     public:
-        LevelChoice(Stack& stack, const Assets& assets);
+        Map(Stack& stack, const Assets& assets);
 
         virtual void mouseMoved(const sf::Vector2f& position);
         virtual void mouseReleased(const sf::Vector2f& position);
