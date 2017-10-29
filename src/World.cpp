@@ -25,8 +25,13 @@ World::World(const std::string& filename)
                 switch(c)
                 {
                     case 'W':
-                        ifs >> p1.x >> p1.y >> p2.x >> p2.y;
-                        walls.push_back(Wall(p1, p2));
+                        ifs >> p2.x >> p2.y;
+                        while(ifs.peek() != '\n')
+                        {
+                            p1 = p2;
+                            ifs >> p2.x >> p2.y;
+                            walls.push_back(Wall(p1, p2));
+                        }
                         break;
 
                     case 'M':
