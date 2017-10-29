@@ -5,7 +5,7 @@
 #include "state/Won.hpp"
 
 Level::Level(Stack& stack, const Assets& assets, const World& world)
- : State(stack, assets), m_launched(false), m_world(world)
+ : State(stack, assets), m_launched(false), m_world(world), m_launch(assets.launch), m_hit(assets.hit)
 {}
 
 void Level::mouseReleased(const sf::Vector2f& position)
@@ -14,6 +14,7 @@ void Level::mouseReleased(const sf::Vector2f& position)
     {
         m_world.ball.launch(position);
         m_launched = true;
+        m_launch.play();
     }
 }
 
@@ -75,5 +76,9 @@ void Level::collisions()
     sf::Vector2f hitPoint, normal;
     for(const Wall& w : m_world.walls)
         if(m_world.ball.intersects(w, hitPoint, normal))
+        {
             m_world.ball.bounce(hitPoint, normal);
+            m_hit.setPlayingOffset(sf::Time::Zero);
+            m_hit.play();
+        }
 }

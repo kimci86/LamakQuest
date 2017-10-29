@@ -11,7 +11,7 @@ include_directories(include)
 
 # setup SFML
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})
-find_package(SFML 2 REQUIRED graphics window system)
+find_package(SFML 2 REQUIRED audio graphics window system)
 include_directories(${SFML_INCLUDE_DIR})
 
 # files

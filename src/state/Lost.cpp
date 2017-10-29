@@ -6,13 +6,16 @@ Lost::Lost(Stack& stack, const Assets& assets, const State& pausedState)
     {
         Button(300.f,L"Restart", assets.font),
         Button(300.f,L"Map", assets.font)
-    }})
-{}
+    }}),
+   m_sound(assets.lose)
+{
+    m_sound.play();
+}
 
 void Lost::keyPressed(sf::Keyboard::Key key)
 {
     if(key == sf::Keyboard::Space)
-        pop(2); // restart;
+        pop(2); // restart
 }
 
 void Lost::buttonClicked(int button)

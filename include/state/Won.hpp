@@ -9,6 +9,9 @@ class Won : public LevelMenu
         Won(Stack& stack, const Assets& assets, const State& pausedState);
 
         virtual void buttonClicked(int button);
+
+    private:
+        sf::Sound m_sound;
 };
 
 #endif

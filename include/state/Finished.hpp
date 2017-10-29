@@ -19,6 +19,7 @@ class Finished : public State
     private:
         sf::Text m_text;
         Button m_button;
+        sf::Sound m_sound;
         sf::Time m_time;
 };
 
