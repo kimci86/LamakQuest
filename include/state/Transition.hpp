@@ -14,24 +14,18 @@ class Transition
 class Pop : public Transition
 {
     public:
+        Pop(int depth);
+
         virtual void apply(State::Stack& stack);
+
+    private:
+        int m_depth;
 };
 
 class Push : public Transition
 {
     public:
         Push(std::unique_ptr<State> state);
-
-        virtual void apply(State::Stack& stack);
-
-    private:
-        std::unique_ptr<State> m_state;
-};
-
-class Change : public Transition
-{
-    public:
-        Change(std::unique_ptr<State> state);
 
         virtual void apply(State::Stack& stack);
 

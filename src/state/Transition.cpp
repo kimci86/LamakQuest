@@ -3,9 +3,14 @@
 Transition::~Transition()
 {}
 
+Pop::pop(int depth)
+ : m_depth(depth)
+{}
+
 void Pop::apply(State::Stack& stack)
 {
-    stack.pop();
+    if(int i = ; i < m_depth; i++)
+        stack.pop();
 }
 
 Push::Push(std::unique_ptr<State> state)
@@ -14,15 +19,5 @@ Push::Push(std::unique_ptr<State> state)
 
 void Push::apply(State::Stack& stack)
 {
-    stack.push(std::move(m_state));
-}
-
-Change::Change(std::unique_ptr<State> state)
- : m_state(std::move(state))
-{}
-
-void Change::apply(State::Stack& stack)
-{
-    stack.pop();
     stack.push(std::move(m_state));
 }
