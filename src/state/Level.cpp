@@ -1,6 +1,8 @@
 #include "state/Level.hpp"
 #include "entity/Overlay.hpp"
 #include "state/Pause.hpp"
+#include "state/Lost.hpp"
+#include "state/Won.hpp"
 
 Level::Level(Stack& stack, const Assets& assets, const World& world)
  : State(stack, assets), m_launched(false), m_world(world)
@@ -48,14 +50,14 @@ void Level::update(sf::Time deltaTime)
         m_world.balls[0].applyFriction(0.95f);
 
     if(checkLost())
-        ; // TODO: push(End)
+        push(std::unique_ptr<State>(new Lost(getStack(), m_assets, *this)));
     else
     {
         bool won = true;
         for(Ball& b : m_world.balls)
             won = won && m_world.hole.isWon(b);
         if(won)
-            ; // TODO: push(End)
+            push(std::unique_ptr<State>(new Won(getStack(), m_assets, *this)));
     }
 }
 
