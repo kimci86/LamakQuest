@@ -4,6 +4,7 @@
 #include <exception>
 #include <string>
 
+#include "Assets.hpp"
 #include "entity/Ball.hpp"
 #include "entity/Hole.hpp"
 #include "entity/Wall.hpp"
@@ -12,7 +13,7 @@
 class World
 {
     public:
-        World(const std::string& filename);
+        World(const std::string& filename, const Assets& assets);
 
         class Error : public std::runtime_error
         {

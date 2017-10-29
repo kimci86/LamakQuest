@@ -2,7 +2,8 @@
 #include <fstream>
 #include <iomanip>
 
-World::World(const std::string& filename)
+World::World(const std::string& filename, const Assets& assets)
+ : hole(assets)
 {
     if(std::ifstream ifs = std::ifstream(filename.c_str()))
     {
