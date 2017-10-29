@@ -15,8 +15,7 @@ bool State::hasTransition() const
 
 void State::doTransition()
 {
-    m_transition->apply(getStack());
-    m_transition.reset();
+    m_transition.release()->apply(getStack());
 }
 
 void State::mouseMoved(const sf::Vector2f& position)
