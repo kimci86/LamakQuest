@@ -11,8 +11,6 @@ Game::Game()
 
 bool Game::run()
 {
-    World w("levels/4.txt");
-    //m_stack.push(std::unique_ptr<State>(new Level(m_stack, m_assets, w)));
     m_stack.push(std::unique_ptr<State>(new LevelChoice(m_stack, m_assets)));
     sf::Clock clock;
     while(!m_stack.empty())
