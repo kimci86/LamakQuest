@@ -3,6 +3,7 @@
 
 #include "gui/Button.hpp"
 #include "state/State.hpp"
+#include "entity/LevelCover.hpp"
 #include "World.hpp"
 
 class Map : public State
@@ -22,6 +23,8 @@ class Map : public State
         int m_nbLevels = 20;
         float m_sizeButton;
         Button m_button;
+        LevelCover m_stars;
+        sf::Sprite m_path;
         std::vector<World> m_worlds;
         int m_id;
 };

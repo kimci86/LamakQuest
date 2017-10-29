@@ -4,7 +4,8 @@ Assets::Assets()
 {
     if(!font.loadFromFile("assets/DejaVuSans.ttf"))
         throw Error("Can not load font.");
-    if(!vortex.loadFromFile("assets/vortex.png"))
+    if(!vortex.loadFromFile("assets/vortex.png") ||
+       !path.loadFromFile("assets/path.png"))
         throw Error("Can not load picture.");
     if(!hit.loadFromFile("assets/hit.flac") ||
        !launch.loadFromFile("assets/launch.flac") ||
