@@ -14,7 +14,7 @@ void Ball::update(sf::Time deltaTime)
 
 void Ball::launch(const sf::Vector2f& position)
 {
-    m_velocity = (getPosition() - position) * 3.f;
+    m_velocity = (getPosition() - position) * 2.f;
 }
 
 bool Ball::intersects(const Wall& wall, sf::Vector2f& hitPoint, sf::Vector2f& normal) const
