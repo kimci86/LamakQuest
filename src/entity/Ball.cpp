@@ -88,7 +88,7 @@ bool Ball::intersects(const Wall& wall, sf::Vector2f& hitPoint, sf::Vector2f& no
 void Ball::bounce(const sf::Vector2f& hitPoint, const sf::Vector2f& normal)
 {
     setPosition(hitPoint + reflection(getPosition() - hitPoint, normal));
-    m_velocity = reflection(m_velocity, normal);
+    m_velocity = reflection(m_velocity, normal) * 0.95f;
 }
 
 const sf::Vector2f& Ball::getVelocity() const
