@@ -17,7 +17,7 @@ Precompiled binaries for windows are [available on github](https://github.com/ki
 License
 -------
 
-This projet is provided under the terms of the MIT license.
+This project is provided under the terms of the MIT license.
 See [LICENSE.txt](LICENSE.txt) for details.
 
 Assets are in the public domain.
